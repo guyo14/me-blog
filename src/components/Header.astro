@@ -1,21 +1,12 @@
 ---
-import Navigation from "./Navigation.astro"
-import Menu from "./Menu.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+import { Menu } from '@lucide/astro';
 ---
 <header>
-    <nav>
-        <div>
-            <ThemeIcon />
-            <Menu />
-        </div>
-        <Navigation />
-    </nav>
+    <button class="menu-button">
+        <Menu />
+    </button>
+    <div class="header-container">
+        <span class="header-text">guyo14@me:~$</span>
+        <hr class="divider" />
+    </div>
 </header>
-
-<style>
-    div {
-        display: flex;
-        justify-content: space-between;
-    }
-</style>
