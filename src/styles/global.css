@@ -10,6 +10,16 @@ body {
     font-size: clamp(1rem, 0.75rem + 1vw, 1.5rem);
 }
 
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #D8D8D8;
+}
+
+.prompt-text {
+    color: #37B608;
+}
+
 header {
     position: relative;
 }
@@ -35,12 +45,6 @@ a {
     font-size: clamp(1.5rem, 1.25rem + 1vw, 2.5rem);
 }
 
-.divider {
-    width: 95%;
-    height: 1px;
-    background-color: #D8D8D8;
-}
-
 .menu-button {
     color: #D8D8D8;
     position: absolute;
@@ -52,14 +56,62 @@ a {
     padding: 0.5rem;
 }
 
+.nav-links {
+    width: 100%;
+    display: none;
+    margin: 0;
+}
+
+.nav-links a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #D8D8D8;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: #343333;
+}
+
+:has(.menu-button[aria-expanded="true"]) .nav-links {
+    display: unset;
+}
+
+@media screen and (min-width: 768px) {
+    .nav-links {
+        margin-left: 5em;
+        display: block;
+        position: static;
+        width: auto;
+        background: none;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        padding: 15px 20px;
+    }
+
+    .menu-button {
+        display: none;
+    }
+}
+
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
-    font-size: clamp(0.5rem, 0.55rem + 1vw, 0.75rem);
+    font-size: clamp(0.75rem, 0.75rem + 1vw, 1rem);
 }
 
-footer p {
-    margin: 0;
+.footer-container {
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

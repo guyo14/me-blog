@@ -2,11 +2,27 @@
 import { Menu } from '@lucide/astro';
 ---
 <header>
-    <button class="menu-button">
-        <Menu />
-    </button>
+    <nav>
+        <button class="menu-button" aria-expanded="false" aria-controls="main-menu">
+            <Menu />
+        </button>
+        <div id="main-menu" class="nav-links">
+            <a href="/">.</a>
+            <a href="/blog">blog</a>
+        </div>
+    </nav>
+
     <div class="header-container">
         <span class="header-text">guyo14@me:~$</span>
         <hr class="divider" />
     </div>
+
+    <script>
+        const menu = document.querySelector('.menu-button')
+
+        menu?.addEventListener("click", () => {
+            const isExpanded = menu.getAttribute("aria-expanded") === "true";
+            menu.setAttribute("aria-expanded", `${!isExpanded}`);
+        });
+    </script>
 </header>
